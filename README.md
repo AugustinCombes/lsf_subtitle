@@ -1,4 +1,5 @@
-# lsf_subtitlehttp://9gag.com/
+# lsf_subtitle
+
 Automatic subtitle of Sign Language using FFNN and Mediapipe
 
 

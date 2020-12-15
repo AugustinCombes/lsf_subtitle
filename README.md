@@ -1,6 +1,6 @@
 # lsf_subtitle
 
-Comment traduire la langue des signes? 
+Comment optimise la traduction de la langue des signes? 
 Ce projet cherche à améliorer la traduction de la langue des signes en utilisant notamment Mediapipe.
 
 # 1ère partie

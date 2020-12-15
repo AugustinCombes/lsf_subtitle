@@ -5,11 +5,16 @@ import keras
 import pandas as pd
 tf.random.set_seed(6)
 import matplotlib.pyplot as plt
-#matplotlib inline
+import itertools
+import seaborn as sn
 import cv2
 import os
 from os.path import isdir, join
-
+from keras.layers import Conv2D, MaxPooling2D
+from keras.layers import Conv2D, Dense, Dropout, Flatten
+from keras.layers import Flatten, Dense
+from keras.models import Sequential
+from sklearn.metrics import confusion_matrix
 
 data_path = r"C:\Users\Louise\Desktop\asl_alphabet_mp\asl_alphabet_train_mp"#lien vers les images de train aprés mediapipe
 data_path_bis = r"C:\Users\Louise\Desktop\asl_alphabet_mp\asl_alphabet_bis_mp"#lien vers les images avec un autre fond aprés mediapipe
@@ -113,13 +118,6 @@ X_bis_Norm = X_bis.astype('float32')/255.0
 
 
 ##Modèle
-
-from keras.layers import Conv2D, MaxPooling2D
-from keras.layers import Conv2D, Dense, Dropout, Flatten
-from keras.layers import Flatten, Dense
-from keras.models import Sequential
-
-
 model = Sequential()
 
 model.add(Conv2D(filters=64, kernel_size=5, padding='same', activation='relu',input_shape=(64, 64, 3)))
@@ -150,11 +148,6 @@ print('Précision pour les images avec un autre arrière plan:', round(score_bis
 
 
 ## Matrice de confusion
-from sklearn.metrics import confusion_matrix
-import matplotlib.pyplot as plt
-import numpy as np
-import itertools
-import seaborn as sn
 
 #Pour images test
 y_prob = model.predict(X_test_Norm, batch_size = 64, verbose = 0)

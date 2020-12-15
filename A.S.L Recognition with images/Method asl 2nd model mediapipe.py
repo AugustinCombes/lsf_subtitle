@@ -16,7 +16,7 @@ from keras.layers import Flatten, Dense
 from keras.models import Sequential
 from sklearn.metrics import confusion_matrix
 
-data_path = r"C:\Users\Louise\Desktop\asl_alphabet_mp\asl_alphabet_train_mp"#lien vers les images de train aprés mediapipe
+data_path = r"C:\Users\Louise\Desktop\asl_alphabet_mp\asl_alphabet_mp"#lien vers les images de train aprés mediapipe
 data_path_bis = r"C:\Users\Louise\Desktop\asl_alphabet_mp\asl_alphabet_bis_mp"#lien vers les images avec un autre fond aprés mediapipe
 
 

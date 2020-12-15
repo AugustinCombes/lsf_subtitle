@@ -128,6 +128,7 @@ print("\tdel: {},space: {}, A: {}, B: {}, C: {}, D: {}, E: {}, F: {}, G: {}, H: 
 print("Autre set:")
 print("\tdel: {},space: {}, A: {}, B: {}, C: {}, D: {}, E: {}, F: {}, G: {}, H: {}, I: {}, J: {}, K: {}, L: {}, M: {}, N: {}, O: {}, P: {}, Q: {}, R: {}, S: {}, T: {}, U: {}, V: {},W: {}, X: {}, Y: {}, Z: {}".format(30, 30, 24, 26, 26, 26, 27, 30, 30, 30, 29, 21, 30, 26, 29, 22, 23, 25, 29, 25, 30, 28, 17, 30, 27, 28, 30, 30))
 
+# On a une répartition imparfait mais correcte du nombre de photos par lettres due aux images que mediapipe n'a pas pu reconnaitre
 
 ## On normalise et catégorise
 

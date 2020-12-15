@@ -14,5 +14,5 @@ En partant du constat de la première partie, nous utilisons Mediapipe pour trai
 
 # 3ème partie
 
-Forts de ce constat, nous créons un moyen pour récupérer des données sur la langue des signes françaises, données directement traduites en coordonées grace à Mediapipe. 
+Forts de ce constat, nous créons un moyen pour récupérer des données vidéos sur la langue des signes françaises, données directement traduites en coordonées grace à Mediapipe, avec pour but la traduction de vidéos. 
 

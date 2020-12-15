@@ -16,7 +16,7 @@ from keras.layers import Flatten, Dense
 from keras.models import Sequential
 from sklearn.metrics import confusion_matrix
 
-data_path = r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet_train"#lien vers les images de train
+data_path = r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet"#lien vers les images de train
 data_path_bis = r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet_bis"#lien vers les images avec un autre fond
 
 

@@ -5,10 +5,16 @@ import keras
 import pandas as pd
 tf.random.set_seed(6)
 import matplotlib.pyplot as plt
-#matplotlib inline
+import itertools
+import seaborn as sn
 import cv2
 import os
 from os.path import isdir, join
+from keras.layers import Conv2D, MaxPooling2D
+from keras.layers import Conv2D, Dense, Dropout, Flatten
+from keras.layers import Flatten, Dense
+from keras.models import Sequential
+from sklearn.metrics import confusion_matrix
 
 data_path = r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet_train"#lien vers les images de train
 data_path_bis = r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet_bis"#lien vers les images avec un autre fond
@@ -132,8 +138,6 @@ print("\tA: {}, B: {}, C: {}, D: {}, E: {}, F: {}, G: {}, H: {}, I: {}, J: {}, K
 
 ## On normalise et catégorise
 
-#A = 0 B= 1 C=3 ... 0=[1,0,0], 2=[0,0,1]...
-
 y_train_OH = keras.utils.to_categorical(y_train)
 y_test_OH = keras.utils.to_categorical(y_test)
 y_bis_OH = keras.utils.to_categorical(y_bis)
@@ -145,12 +149,6 @@ X_bis_Norm = X_bis.astype('float32')/255.0
 
 
 ##Modèle
-
-from keras.layers import Conv2D, MaxPooling2D
-from keras.layers import Conv2D, Dense, Dropout, Flatten
-from keras.layers import Flatten, Dense
-from keras.models import Sequential
-
 
 model = Sequential()
 
@@ -185,11 +183,6 @@ print('Précision pour les images avec un autre arrière plan:', round(score_bis
 
 
 ## Matrice de confusion
-from sklearn.metrics import confusion_matrix
-import matplotlib.pyplot as plt
-import numpy as np
-import itertools
-import seaborn as sn
 
 #Pour images test
 

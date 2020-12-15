@@ -1,26 +1,17 @@
 # lsf_subtitle
 
-Automatic subtitle of Sign Language using FFNN and Mediapipe
+Ce projet cherche à améliorer la traduction de la langue des signes en utilisant notamment Mediapipe.
 
+# 1ère partie
 
-## How to use :
+Dans une première partie on utilise deux bases de données sur la langue des signes américaines, une première base de 87 000 photos et une deuxièmes bas de 870 photos.
+Autour de la première base nous construisons un réseau de neuronne capable d'identifier un signe. On observe que le réseau n'est pas performant pour identifier les signes de la deuxième base de données car les arrières plans sont différents.
 
-This project uses Python 3.
-Required packages are mediapipe, cv2, sklearn (and also numpy, csv, os, time, uuid and sys but these are most likely to be already installed in your environment)
+# 2ème partie 
 
-### First step
-You can easily make out your own base of signs using the "enhanced_vocab_making.py" file. You will have to acquaint the list of words you are setting up in the vocabulary, and the amount of images you are ready to take to train the neural network. The needed data will be loaded in 'mp_data.csv'.
+En partant du constat de la première partie, nous utilisons Mediapipe pour traiter les photos des deux bases de données. En faisant tourner le réseau sur ces nouvelles bases de photos on voit que le problème d'arrière plan est résolut. 
 
-You can also use our prerecorded data, in the file 'mp_data_base.csv' and skip this step.
+# 3ème partie
 
-### Second step
-Then, you will have to run the 'fast_forward_neural_network.py' file, and acquaint again the same list of words and number of images you gave on first step.
+Forts de ce constat, nous créons un moyen pour récupérer des données sur la langue des signes françaises, données directement traduites en coordonées grace à Mediapipe. 
 
-If you are using our prerecorded data, you can also skip this step.
-
-### Third step
-Finally, you can use the neural network to subtitle sign language videos or camera input :
-
-For video input : run 'name.py' and acquaint the link of the video.
-
-For camera input : run 'name2.py' and sign to your camera.

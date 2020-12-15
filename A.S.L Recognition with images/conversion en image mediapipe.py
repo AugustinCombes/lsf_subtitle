@@ -5,7 +5,7 @@ import cv2
 import os
 from os.path import join
 
-n= #3000 si on traite la base de train et 30 si on traite la base bis
+n= #3000 si on traite la base asl_alphabet et 30 si on traite la base asl_alphabet_bis
 
 labels = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','$','@']
 

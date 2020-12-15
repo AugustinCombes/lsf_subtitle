@@ -101,7 +101,32 @@ y_bis_indice = y_bis.argsort()
 y_bis = y_bis[y_bis_indice]
 X_bis = X_bis[y_bis_indice]
 
+##Comptage
 
+def comptage(liste) :
+    Compte =[]
+    for i in range (n):
+        Compte.append(sum(liste==i))
+    return(Compte)
+
+
+Compte_train = comptage(y_train)
+Compte_test = comptage(y_test)
+Compte_bis = comptage(y_bis)
+
+print(Compte_train)
+print(Compte_test)
+print(Compte_bis)
+
+print("Training set:")
+print("\tdel: {},space: {}, A: {}, B: {}, C: {}, D: {}, E: {}, F: {}, G: {}, H: {}, I: {}, J: {}, K: {}, L: {}, M: {}, N: {}, O: {}, P: {}, Q: {}, R: {}, S: {}, T: {}, U: {}, V: {}, W: {}, X: {}, Y: {}, Z: {}".format(1491, 1717, 1111, 1366, 1651, 1753, 359, 1494, 1580, 1705, 1805, 1712, 1749, 1924, 2062, 792, 737, 1327, 1125, 823, 1646, 1442, 510, 1527, 1533, 1506, 1602, 1317))
+
+
+print("Test set:")
+print("\tdel: {},space: {}, A: {}, B: {}, C: {}, D: {}, E: {}, F: {}, G: {}, H: {}, I: {}, J: {}, K: {}, L: {}, M: {}, N: {}, O: {}, P: {}, Q: {}, R: {}, S: {}, T: {}, U: {}, V: {},W: {}, X: {}, Y: {}, Z: {}".format(166, 191, 123, 152, 184, 195, 40, 166, 176, 190, 201, 190, 194, 214, 229, 88, 82, 147, 125, 91, 183, 160, 57, 170, 170, 167, 178, 146))
+
+print("Autre set:")
+print("\tdel: {},space: {}, A: {}, B: {}, C: {}, D: {}, E: {}, F: {}, G: {}, H: {}, I: {}, J: {}, K: {}, L: {}, M: {}, N: {}, O: {}, P: {}, Q: {}, R: {}, S: {}, T: {}, U: {}, V: {},W: {}, X: {}, Y: {}, Z: {}".format(30, 30, 24, 26, 26, 26, 27, 30, 30, 30, 29, 21, 30, 26, 29, 22, 23, 25, 29, 25, 30, 28, 17, 30, 27, 28, 30, 30))
 
 
 ## On normalise et catégorise

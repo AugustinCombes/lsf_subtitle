@@ -7,7 +7,7 @@ Ce projet cherche à sous-titrer la langue des signes (française, anglaise, en 
 
 - Photos et Réseau de Neurone :
 Dans une première partie on utilise deux bases de données sur la langue des signes américaines, une première base de 87 000 photos et une deuxièmes base de 870 photos.
-Autour de la première base nous construisons un réseau de neurones capable d'identifier les signes. On observe que le réseau n'est pas très performant pour identifier les signes de la deuxième base de données: les arrières plans de photos très différents sont la cause majeure de cette performance (accuracy) décevante de 33%. 
+Autour de la première base nous construisons un réseau de neurones (Method asl 1st model.py) capable d'identifier les signes. On observe que le réseau n'est pas très performant pour identifier les signes de la deuxième base de données: les arrières plans de photos très différents sont la cause majeure de cette performance (accuracy) décevante de 33%. 
  
 - Filtre Médiapipe et Réseau de Neurone :
 En partant du constat de la première partie, nous utilisons Mediapipe pour ajouter plus de précision à notre reconnaissance des signes et des positions des mains et traiter les photos des deux bases de données. En faisant tourner le réseau sur ces nouvelles bases d'images transformées (fond blanc avec les dessins du "squelette" de la main par Mediapipe) on voit que le problème d'arrière plan est résolu et on atteint une accuracy de 77% dans la reconnaissance de signes sur le même nombre d'epochs que dans la démarche précédente.

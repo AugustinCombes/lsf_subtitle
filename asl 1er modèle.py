@@ -169,7 +169,8 @@ model.summary()
 
 model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
 
-hist = model.fit(X_train_Norm, y_train_OH, epochs = 4, batch_size = 64)
+hist = model.fit(X_train_Norm, y_train_OH, epochs = 4, batch_size = 64) #Mettre le nombre d'epoch souhaité
+
 
 
 ##Test modèle

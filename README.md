@@ -10,7 +10,7 @@ Dans une première partie on utilise deux bases de données sur la langue des si
 Autour de la première base nous construisons un réseau de neurones (Method asl 1st model.py) capable d'identifier les signes. On observe que le réseau n'est pas très performant pour identifier les signes de la deuxième base de données: les arrières plans de photos très différents sont la cause majeure de cette performance (accuracy) décevante de 33%. 
  
 - Filtre Médiapipe et Réseau de Neurone :
-En partant du constat de la première partie, nous utilisons Mediapipe pour ajouter plus de précision à notre reconnaissance des signes et des positions des mains et traiter les photos des deux bases de données. En faisant tourner le réseau sur ces nouvelles bases d'images transformées (fond blanc avec les dessins du "squelette" de la main par Mediapipe) on voit que le problème d'arrière plan est résolu et on atteint une accuracy de 77% dans la reconnaissance de signes sur le même nombre d'epochs que dans la démarche précédente.
+En partant du constat de la première partie, nous utilisons Mediapipe (conversion en image mediapipe.py) pour ajouter plus de précision à notre reconnaissance des signes et des positions des mains et traiter les photos des deux bases de données. En faisant tourner le réseau (Method asl 2nd model mediapipe.py) sur ces nouvelles bases d'images transformées (fond blanc avec les dessins du "squelette" de la main par Mediapipe) on voit que le problème d'arrière plan est résolu et on atteint une accuracy de 77% dans la reconnaissance de signes sur le même nombre d'epochs que dans la démarche précédente.
 
 # 2ème partie
 

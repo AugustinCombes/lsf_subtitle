@@ -10,12 +10,9 @@ import cv2
 import os
 from os.path import isdir, join
 
-data_path = r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet_train"
-data_path_bis = r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet_test"
+data_path = r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet_train"#lien vers les images de train
+data_path_bis = r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet_bis"#lien vers les images avec un autre fond
 
-os.path.dirname(data_path)
-os.listdir(r"C:\Users\Louise\Desktop\asl_alphabet\asl_alphabet_train")
-os.listdir(data_path)
 
 ##Data extraction
 
@@ -107,13 +104,11 @@ affiche_image( X_bis)
 
 ## On examine le dataset
 
-
 def comptage(liste) :
     Compte =[]
     for i in range (n):
         Compte.append(sum(liste==i))
     return(Compte)
-
 
 Compte_train = comptage(y_train)
 Compte_test = comptage(y_test)
@@ -133,9 +128,6 @@ print("\tA: {}, B: {}, C: {}, D: {}, E: {}, F: {}, G: {}, H: {}, I: {}, J: {}, K
 
 print("Autre set:")
 print("\tA: {}, B: {}, C: {}, D: {}, E: {}, F: {}, G: {}, H: {}, I: {}, J: {}, K: {}, L: {}, M: {}, N: {}, O: {}, P: {}, Q: {}, R: {}, S: {}, T: {}, U: {}, V: {},W: {}, X: {}, Y: {}, Z: {}, del: {}, nothing: {}, space: {}".format(30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30))
-
-
-
 
 
 ## On normalise et catégorise
@@ -199,6 +191,7 @@ import itertools
 import seaborn as sn
 
 #Pour images test
+
 y_prob = model.predict(X_test_Norm, batch_size = 64, verbose = 0)
 y_pred = np.argmax(y_prob,axis=-1)
 
@@ -214,6 +207,7 @@ plt.xlabel('Predicted')
 plt.show()
 
 #Pour images avec un autre fond
+
 y_prob_bis = model.predict(X_bis_Norm, batch_size = 64, verbose = 0)
 y_pred_bis = np.argmax(y_prob_bis,axis=-1)
 
@@ -223,9 +217,11 @@ cm_bis=confusion_matrix(y_bis,y_pred_bis)
 df_cm_bis = pd.DataFrame(cm_bis, columns=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'del', 'nothing', 'space'],index=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'del', 'nothing', 'space'])
 
 sn.set(font_scale=1)
-sn.heatmap(df_cm_bis, annot=True,vmin=0,vmax=29,fmt='d',xticklabels= True,yticklabels= True,annot_kws={"size": 7},cmap="coolwarm")
+sn.heatmap(df_cm_bis, annot=True,vmin=0,vmax=30,fmt='d',xticklabels= True,yticklabels= True,annot_kws={"size": 7},cmap="coolwarm")
 plt.ylabel('Actual')
 plt.xlabel('Predicted')
 plt.show()
+
+
 
 

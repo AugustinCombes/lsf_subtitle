@@ -179,7 +179,7 @@ print('Précision pour les images test:', round(score[1]*100, 3), '%',)
 print('Précision pour les images avec un autre arrière plan:', round(score_bis[1]*100, 3), '%')
 
 
-#plus difficile pour lui de reconnaitre quand les images ont un fond différent
+#Il es plus difficile pour lui de reconnaitre quand les images ont un fond différent
 
 
 ## Matrice de confusion
@@ -215,6 +215,8 @@ sn.heatmap(df_cm_bis, annot=True,vmin=0,vmax=30,fmt='d',xticklabels= True,ytickl
 plt.ylabel('Actual')
 plt.xlabel('Predicted')
 plt.show()
+
+#On voit que certaines lettres donnent plus de confusion : S-M, K-F, R-U
 
 
 
